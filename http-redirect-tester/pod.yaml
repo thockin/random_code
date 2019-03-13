@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: NAME
+spec:
+  containers:
+  - name: test
+    image: thockin/http-redirect-test
+    readinessProbe:
+      httpGet:
+        path: PROBE
+        port: 8080
