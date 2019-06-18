@@ -33,7 +33,7 @@ func main() {
 		}
 		next := buf.String()
 		nextTime := time.Now()
-		nextLines := strings.Count(next, "\n")
+		nextLines := strings.Count(next, "\n") + 1 // trailing \n
 		patch := diff.Diff(prev, next)
 		fmt.Printf("--- old %v\n", prevTime)
 		fmt.Printf("+++ new %v\n", nextTime)
